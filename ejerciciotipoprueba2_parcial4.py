@@ -96,10 +96,10 @@ def main():
         elif opcion == "4":
             salir = input("¿Desea realizar otra operación? (s/n): ").lower()
             if salir != "s":
-                print("👋 Gracias por usar el sistema. ¡Hasta luego!")
+                print("Gracias por usar el sistema, ¡Hasta luego!")
                 break
         else:
-            print("Opción inválida. Intente nuevamente.")
+            print("Opción inválida, Intente nuevamente.")
 
 
 main()
