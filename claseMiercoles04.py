@@ -1,7 +1,7 @@
-# Diccionario para almacenar los usuarios
+
 d = {}
 
-# Función para ingresar un nuevo usuario
+
 def ingresar_usuario():
     while True:
         user = input("Ingrese nombre de usuario: ")
@@ -39,14 +39,14 @@ def ingresar_usuario():
         else:
             print("Contraseña no válida. Debe tener al menos 8 caracteres y sin espacios.")
 
-# Función para buscar un usuario
+
 def buscar_usuario(user):
     if user in d:
         print("El sexo del usuario es:", d[user][1], "y la contraseña es:", d[user][0])
     else:
         print("El usuario no se encuentra.")
 
-# Función para eliminar un usuario
+
 def eliminar_usuario(user):
     if user in d:
         del d[user]
@@ -54,9 +54,7 @@ def eliminar_usuario(user):
     else:
         print("No se pudo eliminar. El usuario no existe.")
 
-# ----------------------
-# PROGRAMA PRINCIPAL
-# ----------------------
+
 while True:
     print("\nMENU PRINCIPAL")
     print("1.- Ingresar usuario.")
