@@ -37,6 +37,72 @@ def compra_de_entradas():
     if opcion_menu == "1":
         print("Tenemos dos tipos de entradas disponibles - General $10.000 y Vip $50.000")
         tipo_entrada = input("ingrese el tipo de entrada a comprar: ").lower(tipo_entrada)
+    if tipo not in ["general", "vip"]:
+        print("Tipo de entrada inválido.")
+        return
+
+    if tipo == "general":
+        valor = 10000
+    else:
+        valor = 50000
+
+    codigo = input("Ingrese el código de confirmación: ")
+    if not validar_codigo(codigo):
+        print("Código inválido. Debe tener mínimo 6 caracteres, una mayúscula, una minúscula, un número y sin espacios.")
+        return
+
+    compradores[nombre] = {
+        "tipo": tipo,
+        "valor": valor,
+        "codigo": codigo
+    }
+    print(" Entrada comprada con éxito.")
+
+
+def consultar_comprador():
+    nombre = input("Ingrese el nombre del comprador a buscar: ")
+    if nombre in compradores:
+        datos = compradores[nombre]
+        print(f"\nComprador encontrado:\nNombre: {nombre}\nTipo de entrada: {datos['tipo']}\nValor: {datos['valor']}\nCódigo: {datos['codigo']}")
+    else:
+        print(" Usuario no encontrado.")
+
+
+def cancelar_compra():
+    nombre = input("Ingrese el nombre del comprador a eliminar: ")
+    if nombre in compradores:
+        del compradores[nombre]
+        print("Compra cancelada exitosamente.")
+    else:
+        print("Usuario no encontrado.")
+
+
+def main():
+    while True:
+        print("\nMENU PRINCIPAL")
+        print("1) Comprar entradas")
+        print("2) Consultar comprador")
+        print("3) Cancelar compra")
+        print("4) Salir")
+
+        opcion = input("Seleccione una opción (1-4): ")
+
+        if opcion == "1":
+            comprar_entrada()
+        elif opcion == "2":
+            consultar_comprador()
+        elif opcion == "3":
+            cancelar_compra()
+        elif opcion == "4":
+            salir = input("¿Desea realizar otra operación? (s/n): ").lower()
+            if salir != "s":
+                print("👋 Gracias por usar el sistema. ¡Hasta luego!")
+                break
+        else:
+            print("Opción inválida. Intente nuevamente.")
+
+
+main()
         
         
         
