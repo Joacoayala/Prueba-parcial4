@@ -1,11 +1,3 @@
-#la empresa samsumg necesita realizar el directorio de su ultimo telefono
-#el cual maneja el lenguaje python
-#nos solicita que esta aplicaccion almacene el nombre, el apellido, direccion, fecha de cumpleaños, y una nota de solo 50 caracteres
-#esta agenda o lista de contacto debe poder guardar o modificar la lista
-#dicho esto resuelva las dificultades del caso
-
-
-
 #la fundacion duoc uc solicia de sus servivicios profesionales para desarrollar un sistema que le permita almacenar los datos
 #personales de cada uno de los estudiantes
 #nombre,apellido,rut,correo electronico, carrera, 
@@ -16,10 +8,10 @@
 #ingeneria: desarrolo web, desarrollo movil y desarrollo escritorio
 #analista: analisis de datos, limpieza de datos, creacion de dashwork
 #gastronomia: historia gastronomia, alimentos naturales y procesados, sopaipilla 2
-# Lista para almacenar los estudiantes
+
 estudiantes = []
 
-# Ciclo para ingresar estudiantes
+
 while True:
     print("Ingrese los datos del estudiante:")
 
@@ -48,7 +40,7 @@ while True:
         print("Opción inválida. Intente nuevamente.")
         continue
 
-    # Crear diccionario con los datos del estudiante
+ 
     estudiante = {
         "nombre": nombre,
         "apellido": apellido,
@@ -58,15 +50,15 @@ while True:
         "materias": materias
     }
 
-    # Agregar estudiante a la lista
+
     estudiantes.append(estudiante)
 
-    # Preguntar si se desea ingresar otro estudiante
+    
     continuar = input("¿Desea ingresar otro estudiante? (si/no): ")
     if continuar.lower() != "si":
         break
 
-# Mostrar los datos ingresados
+
 print("\n--- Lista de Estudiantes ---")
 for est in estudiantes:
     print(f"Nombre: {est['nombre']} {est['apellido']}")
