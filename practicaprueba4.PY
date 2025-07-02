@@ -30,11 +30,11 @@
 
 # Usa un diccionario llamado d para almacenar los usuarios
 
-d = {}
+registro = {}
 def ingresar_usuario():
     while True:
         nombre = input("ingresa el nombre del usuario: ")
-        if nombre not in d:
+        if nombre not in registro:
             break
         else:
             print("el nombre ingresado ya esta registrado, intente con otro")
@@ -60,19 +60,19 @@ def ingresar_usuario():
                     print("la contraseña debe contener minimo 8 caracteres y sin espacios")
                 if num > 0 and letras > 0:
                     print("contraseña valida")
-                    d[nombre] = [sexo, contraseña]
+                    registro[nombre] = [sexo, contraseña]
                     print("usuario registrado con exito")
                     break
                 else:
                     print("la contraseña debe contener una letra y un numero")
 def buscar_usuario(nombre):
-    if nombre in d:
-        print("el sexo del usuario es:", d[nombre] [1], "y la contraseña es:",[nombre] [0])
+    if nombre in registro:
+        print("el sexo del usuario es:", registro[nombre] [1], "y la contraseña es:",[nombre] [0])
     else:
         print("el usuario no se encuentra")
         
 def eliminar_usuario(nombre):
-    if nombre in d:
+    if nombre in registro:
         del d[nombre]
     else:
         print("el usuario ingresado no existe")
