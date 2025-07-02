@@ -22,7 +22,7 @@
 
 # recomendacion: si el ingreso de una opccion distinta, debe mostrar un mensaje que debe seleccionar una opccion valida
 # todas las opcciones del menu deben estar implementadas con funciones separadas del codigo principal, (main)
-# Función para validar si la contraseña cumple los requisitos
+
 def validar_contraseña(clave):
     if len(clave) < 8:
         return False
@@ -32,10 +32,10 @@ def validar_contraseña(clave):
     tiene_letra = any(char.isalpha() for char in clave)
     return tiene_numero and tiene_letra
 
-# Función para ingresar usuario
+
 def ingresar_usuario(usuarios):
     nombre = input("Ingrese el nombre del usuario: ").strip()
-    # Validar nombre no repetido
+ 
     if nombre in usuarios:
         print("El nombre de usuario ya existe. Intente con otro.")
         return
@@ -50,11 +50,11 @@ def ingresar_usuario(usuarios):
         print("Contraseña inválida. Debe tener mínimo 8 caracteres, al menos un número, una letra y no contener espacios.")
         return
 
-    # Si todo OK, guardar usuario
+ 
     usuarios[nombre] = {"sexo": sexo, "clave": clave}
     print("Ingreso exitoso.")
 
-# Función para buscar usuario
+
 def buscar_usuario(usuarios):
     nombre = input("Ingrese el nombre del usuario a buscar: ").strip()
     if nombre in usuarios:
@@ -65,7 +65,7 @@ def buscar_usuario(usuarios):
     else:
         print("El usuario no se encuentra registrado.")
 
-# Función para eliminar usuario
+
 def eliminar_usuario(usuarios):
     nombre = input("Ingrese el nombre del usuario a eliminar: ").strip()
     if nombre in usuarios:
@@ -74,7 +74,7 @@ def eliminar_usuario(usuarios):
     else:
         print("El usuario no se encuentra registrado.")
 
-# Función principal (main)
+
 def main():
     usuarios = {}
     while True:
